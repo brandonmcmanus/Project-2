@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Victoria Car Rentals</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<h1><a href="homepage.html">Victoria Car Rentals</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="homepage.html">Home</a></li>
+						<li><a href="carrentalcompanies.html">Car Rental Companies </a></li>
+						
+						<li><a href="booknow.html">Book Now</a></li>
+						
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<img src="car.jpg" >
+			<width=305px;
+		
+				<div class="inner">
+					<h2>This is Victoria Car Rentals</h2>
+					<p>A Car Rental Price Comparison Website </p>
+					<ul class="actions">
+						<li><a href="booknow.html" class="button big special">Book Now</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style1">
+				<header class="major">
+					<h2>Why Rent with us?</h2>
+					<p>We offer the greatest range of Car rental prices and options for you</p>
+				</header>
+				<div class="container">
+					<div class="row">
+						<div class="4u">
+							<section class="special box">
+								<i class="icon fa-area-chart major"></i>
+								<h3>Best Rental Companies</h3>
+								<p>We offer the best prices from the world's leading car rental companies such as Enterprise, Hertz, National, Thrifty, Alamo, Avis and Budget.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section class="special box">
+								<i class="icon fa-refresh major"></i>
+								<h3>Why Rent with us?</h3>
+								<p> We specialize in finding you the best deal for your car rental and will match the price any rental from one of our competitors</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section class="special box">
+								<i class="icon fa-cog major"></i>
+								<h3>We are a customer first business</h3>
+								<p> We pride ourselves on offering the best deals and rewards to our customers.</p>
+							</section>
+							<H2>Find us here!</H2>
+<div align="center">
+<html>
+
+  <div id="map" style="width:500px; height: 400px;">
+  </div>
+ 
+
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyB3hUGDHK06gZ7utwBEAu8cbt21WlUAFFs"></script>
+</div>
+<script>
+var count = 0;
+var locations = [
+    [
+        "Victoria Car Rentals",
+        48.463997,
+         -123.311609
+    ]
+
+]
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: new google.maps.LatLng(48.463649,  -123.311951),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            count++;
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+
+
+        }
+      })(marker, i));
+        
+    }
+     google.maps.event.addListener(map, 'bounds_changed', function(){
+         console.log(map.getBounds().toString());
+     }); 
+
+</script> 
+
+</html>
+</div>
